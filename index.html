@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Search Section -->
+        <header class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name (e.g. London, Tokyo, New York)..." />
+            <button id="searchBtn">Search</button>
+            <button id="locationBtn" title="Use Current Location">📍 Location</button>
+        </header>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="hidden">Fetching weather data...</div>
+
+        <!-- Error Message Container -->
+        <div id="errorMsg" class="error-card hidden"></div>
+
+        <!-- Main Weather Dashboard Display -->
+        <main id="weatherDisplay" class="hidden">
+            <!-- Current Weather Card -->
+            <section class="card current-card">
+                <div class="current-header">
+                    <div>
+                        <h1 id="cityName">--</h1>
+                        <p id="currentDate">--</p>
+                    </div>
+                    <div class="temp-badge">
+                        <span id="temperature">--</span>°C
+                    </div>
+                </div>
+                <p id="weatherState" class="weather-state">--</p>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="label">💨 Wind Speed</span>
+                        <span id="windSpeed" class="value">-- km/h</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="label">💧 Humidity</span>
+                        <span id="humidity" class="value">--%</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="label">🌡️ Feels Like</span>
+                        <span id="feelsLike" class="value">--°C</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="label">☀️ UV Index</span>
+                        <span id="uvIndex" class="value">--</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast -->
+            <section class="card forecast-card">
+                <h2>5-Day Forecast</h2>
+                <div id="forecastContainer" class="forecast-grid">
+                    <!-- Dynamic forecast items generated via JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
